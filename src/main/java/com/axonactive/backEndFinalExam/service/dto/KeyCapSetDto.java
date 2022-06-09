@@ -1,42 +1,29 @@
-package com.axonactive.backEndFinalExam.entity;
+package com.axonactive.backEndFinalExam.service.dto;
 
 import com.axonactive.backEndFinalExam.entity.enumClazz.KeycapPrintingTechnique;
 import com.axonactive.backEndFinalExam.entity.enumClazz.KeycapProfile;
 import com.axonactive.backEndFinalExam.entity.enumClazz.Material;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.time.LocalDate;
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class KeyCapSet {
-    @Id
-    @GeneratedValue
-    private Integer id;
-
-    @Enumerated
+public class KeyCapSetDto {
     private Material material;
 
     private String color;
 
-    @Enumerated
     private KeycapPrintingTechnique keyCabPrintingTechnique;
 
-    @Enumerated
     private KeycapProfile keycapProfile;
 
-    @JoinColumn
-    @ManyToOne
-    private Manufacturer manufacturer;
+    private String manufacturerName;
 
-    private LocalDate importedDate;
+
 
     private double price;
 }

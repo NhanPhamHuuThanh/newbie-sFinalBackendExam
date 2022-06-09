@@ -1,5 +1,7 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.Material;
+import com.axonactive.backEndFinalExam.entity.enumClazz.MountType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

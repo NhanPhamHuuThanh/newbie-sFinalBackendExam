@@ -10,35 +10,45 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class KeyboardPatch {
+public class KitBatch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private double totalPrice;
+    private String layOut;
 
-    private String name;
+    private String size;
 
-    private String insuranceWarranty;
+    private LocalDate manufacturedDate;
 
-    private LocalDate assembleDate;
+    private String model;
+
+    private int quantity;
+
+    private LocalDate importedDate;
+
+    private double pricePerUnit;
 
     @JoinColumn
     @ManyToOne
-    private SwitchPatch switchPatch;
+    private Plate plate;
+
+    @JoinColumn(name = "caseId")
+    @ManyToOne
+    private Caze caze;
 
     @JoinColumn
     @ManyToOne
-    private KitPatch kitPatch;
+    private Pcb pcb;
 
     @JoinColumn
     @ManyToOne
     private Manufacturer manufacturer;
 
-    @JoinColumn
-    @ManyToOne
-    private KeyCapSet keyCapSet;
+
+
+
 }

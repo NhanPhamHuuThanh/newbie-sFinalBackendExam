@@ -1,5 +1,6 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.SwitchType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SwitchPatch {
+public class SwitchBatch {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;

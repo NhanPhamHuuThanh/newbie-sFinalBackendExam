@@ -9,18 +9,19 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Case {
+public class StabAndKitBatch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
-    private Material material;
+    @JoinColumn
+    @ManyToOne
+    private KitBatch kitBatch;
 
-    private String color;
-
-    private double weight;
+    @JoinColumn
+    @ManyToOne
+    private Stabilizer stabilizer;
 }

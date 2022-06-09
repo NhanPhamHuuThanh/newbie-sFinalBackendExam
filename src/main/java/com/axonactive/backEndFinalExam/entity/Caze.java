@@ -1,28 +1,27 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.Material;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.security.CodeSigner;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class StabAndKitPatch {
+public class Caze {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @JoinColumn
-    @ManyToOne
-    private KitPatch kitPatch;
+    @Enumerated
+    private Material material;
 
-    @JoinColumn
-    @ManyToOne
-    private Stabilizer stabilizer;
+    private String color;
+
+    private double weight;
 }
