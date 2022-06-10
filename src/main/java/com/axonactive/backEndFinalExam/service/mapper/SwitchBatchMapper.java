@@ -12,7 +12,7 @@ import java.util.List;
 
 @Mapper
 public interface SwitchBatchMapper {
-    SwitchStringMapper INSTANCE = Mappers.getMapper(SwitchStringMapper.class);
+    SwitchBatchMapper INSTANCE = Mappers.getMapper(SwitchBatchMapper.class);
 
     @Mapping(source = "stem.stemHeight",target = "stemHeight")
     @Mapping(source = "switchString.springLength",target = "springLength")

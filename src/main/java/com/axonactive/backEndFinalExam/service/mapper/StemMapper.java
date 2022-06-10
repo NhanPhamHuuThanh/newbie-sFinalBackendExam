@@ -13,6 +13,7 @@ public interface StemMapper {
     StemMapper INSTANCE = Mappers.getMapper(StemMapper.class);
 
     StemDto toDto(Stem stem);
+
     List<StemDto> toDtos(List<Stem> stems);
 
 }

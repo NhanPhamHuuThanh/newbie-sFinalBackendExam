@@ -1,8 +1,10 @@
 package com.axonactive.backEndFinalExam.service.impl;
 
-import com.axonactive.backEndFinalExam.entity.SwitchBatch;
-import com.axonactive.backEndFinalExam.repository.SwitchBatchRepo;
+import com.axonactive.backEndFinalExam.api.request.SwitchBatchRequest;
+import com.axonactive.backEndFinalExam.entity.*;
+import com.axonactive.backEndFinalExam.repository.SwitchStringRepo;
 import com.axonactive.backEndFinalExam.service.SwitchBatchService;
+import com.axonactive.backEndFinalExam.service.SwitchStringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,27 +12,27 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SwitchStringServiceImpl implements SwitchBatchService {
+public class SwitchStringServiceImpl implements SwitchStringService {
     @Autowired
-    private SwitchBatchRepo switchBatchRepo;
+    private SwitchStringRepo switchStringRepo;
 
     @Override
-    public List<SwitchBatch> getAll() {
-        return switchBatchRepo.findAll();
+    public List<SwitchString> getAll() {
+        return switchStringRepo.findAll();
     }
 
     @Override
-    public Optional<SwitchBatch> findById(Integer id) {
-        return switchBatchRepo.findById(id);
+    public Optional<SwitchString> findById(Integer id) {
+        return switchStringRepo.findById(id);
     }
 
     @Override
-    public SwitchBatch save(SwitchBatch switchBatch) {
-        return switchBatchRepo.save(switchBatch);
+    public SwitchString save(SwitchString switchBatch) {
+        return switchStringRepo.save(switchBatch);
     }
 
     @Override
     public void deleteById(Integer id) {
-        switchBatchRepo.deleteById(id);
+        switchStringRepo.deleteById(id);
     }
 }
