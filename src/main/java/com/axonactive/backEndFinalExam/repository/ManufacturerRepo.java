@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ManufacturerRepo  extends JpaRepository<Manufacturer,Integer> {
+public interface ManufacturerRepo extends JpaRepository<Manufacturer, Integer> {
+    Manufacturer findByNameLike(String name);
+
 }

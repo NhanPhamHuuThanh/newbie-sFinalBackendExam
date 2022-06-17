@@ -19,9 +19,13 @@ public class Plate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Material material;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private MountType mountType;
+
+    @JoinColumn
+    @ManyToOne
+    private KitBatch kitBatch;
 }

@@ -14,12 +14,9 @@ import java.util.List;
 public interface SwitchBatchMapper {
     SwitchBatchMapper INSTANCE = Mappers.getMapper(SwitchBatchMapper.class);
 
-    @Mapping(source = "stem.stemHeight",target = "stemHeight")
-    @Mapping(source = "switchString.springLength",target = "springLength")
-    @Mapping(source = "switchString.springForce", target = "springForce")
-    @Mapping(source = "housing.mountType",target = "mountType")
-    @Mapping(source = "housing.color",target = "color")
     @Mapping(source = "manufacturer.name",target = "manufacturerName")
+
     SwitchBatchDto toDto(SwitchBatch switchBatch);
+
     List<SwitchBatchDto> toDtos(List<SwitchBatch> switchBatchList);
 }

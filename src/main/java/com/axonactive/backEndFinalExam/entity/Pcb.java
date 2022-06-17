@@ -20,12 +20,16 @@ public class Pcb {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private pcbType pcbType;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Material material;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private PcbCut pcbCut;
+
+    @ManyToOne
+    @JoinColumn
+    private KitBatch kitBatch;
 }

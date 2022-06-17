@@ -1,32 +1,39 @@
 package com.axonactive.backEndFinalExam.service.dto;
 
-import com.axonactive.backEndFinalExam.entity.enumClazz.MountType;
-import com.axonactive.backEndFinalExam.entity.enumClazz.SwitchType;
+import com.axonactive.backEndFinalExam.entity.enumClazz.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class KeyboardBatchDto {
-
-    private double totalPrice;
-
     private String name;
 
-    private String insuranceWarranty;
+    private int insuranceWarrantyMonth;
 
-    private LocalDate assembleDate;
+    private int quantity;
 
-    private Integer switchBatchDto;
+    private int soldUnits;
 
-    private Integer kitBatchDto;
+    private LocalDate soldDate;
 
-    private Integer keyCapSetDto;
+    private LocalDate importedDate;
 
+    private double pricePerUnit;
 
+    private Status status;
+
+    private String manufacturerName;
+
+    private String kitBatchName;
+
+    private String switchName;
+
+    private String keyCapName;
 }

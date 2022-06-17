@@ -8,7 +8,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ManufacturerDto {
+
     private String name;
+
     private String location;
+
     private String email;
+
+    private Integer keyCapSetId;
+
+    private Integer kitBatchId;
+
+    private Integer switchBatchId;
 }

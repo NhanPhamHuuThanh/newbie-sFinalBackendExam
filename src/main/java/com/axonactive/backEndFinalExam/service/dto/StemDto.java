@@ -16,4 +16,6 @@ public class StemDto {
     private Material material;
 
     private String stemColor;
+
+    private Integer switchBatchId;
 }

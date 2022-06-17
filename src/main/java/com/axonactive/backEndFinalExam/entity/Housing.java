@@ -19,11 +19,15 @@ public class Housing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Material material;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private MountType mountType;
 
     private String color;
+
+    @JoinColumn
+    @ManyToOne
+    private SwitchBatch switchBatch;
 }

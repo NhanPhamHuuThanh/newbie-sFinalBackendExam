@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -27,4 +24,8 @@ public class SwitchString {
     private String springType;
 
     private int amountOfLiquidRecommended;
+
+    @JoinColumn
+    @ManyToOne
+    private SwitchBatch switchBatch;
 }

@@ -16,4 +16,6 @@ public class SwitchStringDto {
     private String springType;
 
     private int amountOfLiquidRecommended;
+
+    private Integer switchBatchId;
 }

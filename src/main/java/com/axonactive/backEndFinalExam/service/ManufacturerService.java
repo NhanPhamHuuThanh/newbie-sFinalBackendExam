@@ -2,6 +2,7 @@ package com.axonactive.backEndFinalExam.service;
 
 
 import com.axonactive.backEndFinalExam.entity.Manufacturer;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +15,7 @@ public interface ManufacturerService {
     Manufacturer save(Manufacturer manufacturer);
 
     void deleteById(Integer id);
+
+    Manufacturer findByManufacturerNameLike(String name);
+
 }

@@ -1,5 +1,6 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,24 +19,31 @@ public class KeyboardBatch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private double totalPrice;
-
     private String name;
 
-    private String insuranceWarranty;
+    private int insuranceWarrantyMonth;
 
-    private LocalDate assembleDate;
+    private int quantity;
+
+    private int soldUnits;
+
+    private LocalDate soldOutDate;
+
+    private LocalDate importedDate;
+
+    private double pricePerUnit;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @JoinColumn
     @ManyToOne
-    private SwitchBatch switchBatch;
+    private Manufacturer manufacturer;
 
-    @JoinColumn
-    @ManyToOne
-    private KitBatch kitBatch;
+    private String kitBatchName;
 
+    private String switchBatchName;
 
-    @JoinColumn
-    @ManyToOne
-    private KeyCapSet keyCapSet;
+    private String keyCapName;
 }
+

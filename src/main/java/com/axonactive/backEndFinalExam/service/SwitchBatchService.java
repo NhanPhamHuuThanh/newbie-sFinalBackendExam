@@ -2,6 +2,8 @@ package com.axonactive.backEndFinalExam.service;
 
 import com.axonactive.backEndFinalExam.api.request.SwitchBatchRequest;
 import com.axonactive.backEndFinalExam.entity.*;
+import com.axonactive.backEndFinalExam.service.dto.SwitchBatchDto;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +15,8 @@ public interface SwitchBatchService {
 
     SwitchBatch save(SwitchBatch switchBatch);
 
-    SwitchBatch save(SwitchBatchRequest switchBatchRequest);
-
     void deleteById(Integer id);
+
+    SwitchBatchDto checkStockAvailability(String name);
+
 }

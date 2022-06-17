@@ -14,12 +14,9 @@ import java.util.List;
 public interface KitBatchMapper {
     KitBatchMapper INSTANCE = Mappers.getMapper(KitBatchMapper.class);
 
-    @Mapping(source = "plate.mountType",target ="plateMountType")
-    @Mapping(source = "caze.color",target = "caseColor")
-    @Mapping(source = "caze.material",target = "material")
-    @Mapping(source = "caze.weight",target = "caseWeight")
-    @Mapping(source = "pcb.pcbType",target = "pcbType")
     @Mapping(source = "manufacturer.name",target = "manufacturerName")
+
     KitBatchDto toDto(KitBatch kitBatch);
+
     List<KitBatchDto> toDtos(List<KitBatch> kitBatchList);
 }

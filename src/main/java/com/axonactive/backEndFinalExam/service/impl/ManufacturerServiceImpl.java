@@ -33,4 +33,11 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     public void deleteById(Integer id) {
     manufacturerRepo.deleteById(id);
     }
+
+    @Override
+    public Manufacturer findByManufacturerNameLike(String name) {
+        return manufacturerRepo.findByNameLike(name);
+    }
+
+
 }

@@ -3,6 +3,7 @@ package com.axonactive.backEndFinalExam.entity;
 import com.axonactive.backEndFinalExam.entity.enumClazz.KeycapPrintingTechnique;
 import com.axonactive.backEndFinalExam.entity.enumClazz.KeycapProfile;
 import com.axonactive.backEndFinalExam.entity.enumClazz.Material;
+import com.axonactive.backEndFinalExam.entity.enumClazz.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,25 +19,37 @@ import java.time.LocalDate;
 @Builder
 public class KeyCapSet {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    private String name;
+
+    @Enumerated(EnumType.STRING)
     private Material material;
 
     private String color;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private KeycapPrintingTechnique keyCabPrintingTechnique;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private KeycapProfile keycapProfile;
 
-    @JoinColumn
-    @ManyToOne
-    private Manufacturer manufacturer;
-
     private LocalDate importedDate;
-
+    @Column
     private double price;
+
+
+    private LocalDate soldOutDate;
+
+    private int quantity;
+
+    private int soldUnits;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @ManyToOne
+    @JoinColumn
+    private Manufacturer manufacturer;
 }

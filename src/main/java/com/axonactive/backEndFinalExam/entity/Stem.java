@@ -20,8 +20,12 @@ public class Stem {
 
     private int stemHeight;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Material material;
 
     private String stemColor;
+
+    @JoinColumn
+    @ManyToOne
+    private SwitchBatch switchBatch;
 }

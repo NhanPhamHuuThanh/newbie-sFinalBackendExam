@@ -1,5 +1,7 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.Material;
+import com.axonactive.backEndFinalExam.entity.enumClazz.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,14 +15,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class KitBatch {
+public class KitBatch  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String layOut;
-
-    private String size;
+    private Integer layOut;
 
     private LocalDate manufacturedDate;
 
@@ -28,27 +28,26 @@ public class KitBatch {
 
     private int quantity;
 
+    private int soldUnits;
+
     private LocalDate importedDate;
+
+    private LocalDate soldOutDate;
 
     private double pricePerUnit;
 
-    @JoinColumn
-    @ManyToOne
-    private Plate plate;
+    private String color;
 
-    @JoinColumn(name = "caseId")
-    @ManyToOne
-    private Caze caze;
+    private float  weight;
 
-    @JoinColumn
-    @ManyToOne
-    private Pcb pcb;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @JoinColumn
+    @Enumerated(EnumType.STRING)
+    private Material material;
+
     @ManyToOne
+    @JoinColumn
     private Manufacturer manufacturer;
-
-
-
 
 }

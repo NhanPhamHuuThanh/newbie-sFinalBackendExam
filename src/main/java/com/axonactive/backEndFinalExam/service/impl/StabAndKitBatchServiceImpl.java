@@ -1,7 +1,8 @@
 package com.axonactive.backEndFinalExam.service.impl;
 
 import com.axonactive.backEndFinalExam.entity.StabAndKitBatch;
-import com.axonactive.backEndFinalExam.repository.StabAndKitPatchRepo;
+import com.axonactive.backEndFinalExam.repository.StabAndKitBatchRepo;
+
 import com.axonactive.backEndFinalExam.service.StabAndKitBatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.util.Optional;
 @Service
 public class StabAndKitBatchServiceImpl implements StabAndKitBatchService {
     @Autowired
-    private StabAndKitPatchRepo stabAndKitPatchRepo;
+    private StabAndKitBatchRepo stabAndKitPatchRepo;
 
     @Override
     public List<StabAndKitBatch> getAll() {

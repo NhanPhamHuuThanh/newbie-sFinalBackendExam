@@ -17,4 +17,6 @@ public class HousingDto {
     private MountType mountType;
 
     private String color;
+
+    private Integer switchBatchId;
 }

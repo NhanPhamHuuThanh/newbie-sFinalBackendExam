@@ -15,4 +15,6 @@ public class PLateDto {
     private Material material;
 
     private MountType mountType;
+
+    private Integer kitBatchId;
 }

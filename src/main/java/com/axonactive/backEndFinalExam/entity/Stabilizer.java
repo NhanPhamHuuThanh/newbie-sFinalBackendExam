@@ -18,7 +18,7 @@ public class Stabilizer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Material material;
 
     private int length;

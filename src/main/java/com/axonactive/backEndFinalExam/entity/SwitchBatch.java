@@ -1,5 +1,6 @@
 package com.axonactive.backEndFinalExam.entity;
 
+import com.axonactive.backEndFinalExam.entity.enumClazz.Status;
 import com.axonactive.backEndFinalExam.entity.enumClazz.SwitchType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 
 @Entity
@@ -19,10 +21,12 @@ public class SwitchBatch {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private SwitchType switchType;
 
     private int quantity;
+
+    private int soldUnits;
 
     private double pricePerUnit;
 
@@ -30,21 +34,14 @@ public class SwitchBatch {
 
     private String switchName;
 
-    private int amountOfLubeForSwitch;
+    private LocalDate soldOutDate;
 
-    @JoinColumn
-    @ManyToOne
-    private Stem stem;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @JoinColumn
     @ManyToOne
-    private SwitchString switchString;
-
     @JoinColumn
-    @ManyToOne
-    private Housing housing;
-
-    @JoinColumn
-    @ManyToOne
     private Manufacturer manufacturer;
+
+
 }
