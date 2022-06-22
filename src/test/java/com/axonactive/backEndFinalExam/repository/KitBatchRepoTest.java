@@ -14,4 +14,8 @@ class KitBatchRepoTest {
         Assertions.assertEquals(0,kitBatchRepo.getAllInStock("001","002").size());
 }
 
+    @Test
+    void getAllKitBatchFromAManufacturer() {
+        Assertions.assertEquals(0,kitBatchRepo.getAllKitBatchFromAManufacturer("001").size());
+    }
 }

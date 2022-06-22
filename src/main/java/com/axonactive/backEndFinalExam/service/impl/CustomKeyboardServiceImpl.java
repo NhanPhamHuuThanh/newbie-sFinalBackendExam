@@ -11,6 +11,7 @@ import com.axonactive.backEndFinalExam.service.dto.SwitchBatchDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,9 +51,12 @@ public class CustomKeyboardServiceImpl implements CustomKeyboardService {
     public CustomKeyboardDto buildCustomKeyboard(CustomKeyboardRequest customKeyboardRequest) {
         CustomKeyboardDto customKeyboardDto = new CustomKeyboardDto();
 
-        KitBatchDto kitBatchDto = kitBatchService.checkStockAvailability(customKeyboardDto.getKitModel(), customKeyboardRequest.getKitColor());
-        KeyCapSetDto keyCapSetDto = keycapSetService.getAllInStock(customKeyboardDto.getKeyCapSet());
-        SwitchBatchDto switchBatchDto = switchBatchService.checkStockAvailability(customKeyboardDto.getSwitchName());
+        KitBatchDto kitBatchDto = kitBatchService.checkStockAvailability(customKeyboardRequest.getKitModel(), customKeyboardRequest.getKitColor());
+
+        KeyCapSetDto keyCapSetDto = keycapSetService.getAllInStock(customKeyboardRequest.getKeyCapSet());
+
+        SwitchBatchDto switchBatchDto = switchBatchService.checkStockAvailability(customKeyboardRequest.getSwitchName());
+
         if (switchBatchDto != null)
             customKeyboardDto.setSwitchName(switchBatchDto.getSwitchName());
         else
@@ -70,6 +74,7 @@ public class CustomKeyboardServiceImpl implements CustomKeyboardService {
         double totalPrice = (switchBatchDto.getPricePerUnit() * kitBatchDto.getLayOut()
                 + kitBatchDto.getPricePerUnit() + keyCapSetDto.getPrice()) * CustomKeyboard.assembleRate;
         customKeyboardDto.setAssemblePrice(totalPrice);
+        customKeyboardDto.setExpectedDeliveryDate(LocalDate.now().plusDays(20));
         return customKeyboardDto;
     }
 }

@@ -24,8 +24,10 @@ public class KeyCapSetDto {
 
     private String color;
 
+    @Enumerated(EnumType.STRING)
     private KeycapPrintingTechnique keyCabPrintingTechnique;
 
+    @Enumerated(EnumType.STRING)
     private KeycapProfile keycapProfile;
 
     private LocalDate importedDate;

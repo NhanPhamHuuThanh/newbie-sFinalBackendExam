@@ -18,17 +18,6 @@ import java.time.LocalDate;
 public class KeyCapSetRequest {
     private String name;
 
-    @Enumerated(EnumType.STRING)
-    private Material material;
-
-    private String color;
-
-    @Enumerated(EnumType.STRING)
-    private KeycapPrintingTechnique keyCabPrintingTechnique;
-
-    @Enumerated(EnumType.STRING)
-    private KeycapProfile keycapProfile;
-
     private LocalDate importedDate;
     @Column
     private double price;
@@ -38,5 +27,4 @@ public class KeyCapSetRequest {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    private String manufacturerName;
 }

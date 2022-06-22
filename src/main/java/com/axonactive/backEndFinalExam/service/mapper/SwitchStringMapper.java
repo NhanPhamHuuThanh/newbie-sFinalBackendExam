@@ -1,7 +1,6 @@
 package com.axonactive.backEndFinalExam.service.mapper;
 
-import com.axonactive.backEndFinalExam.entity.SwitchString;
-
+import com.axonactive.backEndFinalExam.entity.SwitchSpring;
 import com.axonactive.backEndFinalExam.service.dto.SwitchStringDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,8 +14,8 @@ public interface SwitchStringMapper {
 
     @Mapping(source = "switchBatch.id",target = "switchBatchId")
 
-    SwitchStringDto toDto(SwitchString stabAndKitBatch);
+    SwitchStringDto toDto(SwitchSpring stabAndKitBatch);
 
-    List<SwitchStringDto> toDtos(List<SwitchString> switchStringList);
+    List<SwitchStringDto> toDtos(List<SwitchSpring> switchStringList);
 
 }

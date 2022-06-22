@@ -26,7 +26,6 @@ public class SwitchBatchDto {
 
     private String switchName;
 
-
     private Status status;
 
     private String manufacturerName;

@@ -31,7 +31,7 @@ public class KeyboardBatchDto {
 
     private String manufacturerName;
 
-    private String kitBatchName;
+    private String kitName;
 
     private String switchName;
 

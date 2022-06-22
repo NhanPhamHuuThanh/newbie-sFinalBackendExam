@@ -20,11 +20,6 @@ public class KitBatchRequest {
 
     private int quantity;
 
-    private Integer layOut;
-
-    private LocalDate manufacturedDate;
-
-    private String model;
 
     private LocalDate importedDate;
 
@@ -33,10 +28,7 @@ public class KitBatchRequest {
 
     private String color;
 
-    private float  weight;
-
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    private String manufacturerName;
 }

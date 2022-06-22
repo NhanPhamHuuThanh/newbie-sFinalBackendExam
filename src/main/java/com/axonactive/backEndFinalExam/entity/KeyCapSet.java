@@ -36,9 +36,9 @@ public class KeyCapSet {
     private KeycapProfile keycapProfile;
 
     private LocalDate importedDate;
+
     @Column
     private double price;
-
 
     private LocalDate soldOutDate;
 

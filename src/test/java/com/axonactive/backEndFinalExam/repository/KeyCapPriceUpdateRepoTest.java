@@ -14,6 +14,6 @@ class KeyCapPriceUpdateRepoTest {
 
     @Test
     void shouldReturn0WhenThereArentAnyPriceUpdateInABatch() {
-        Assertions.assertEquals(0, keyCapPriceUpdateRepo.findAllTheUpdateHistoryOfKeyCapSet("001", LocalDate.parse("2002-02-02")));
+        Assertions.assertEquals(0, keyCapPriceUpdateRepo.findAllTheUpdateHistoryOfKeyCapSet("001", LocalDate.parse("2002-02-02")).size());
     }
 }

@@ -26,5 +26,5 @@ public class PriceUpdateRecord {
     @Enumerated(EnumType.STRING)
     private ItemType itemType;
 
-    private Integer itemId;
+    private Integer  itemId;
 }

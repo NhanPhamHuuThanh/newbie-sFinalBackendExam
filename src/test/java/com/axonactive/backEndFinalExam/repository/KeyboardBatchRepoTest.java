@@ -14,6 +14,11 @@ class KeyboardBatchRepoTest {
 
     @Test
     void shouldReturn0WhenFirstTested(){
-    Assertions.assertEquals(0,keyboardBatchRepo.getAllInStock("001"));
+    Assertions.assertEquals(0,keyboardBatchRepo.getAllInStock("001").size());
+    }
+
+    @Test
+    void getAllKeyboardBatchFromAManufacturer() {
+        Assertions.assertEquals(0,keyboardBatchRepo.getAllKeyboardBatchFromAManufacturer("JOe").size());
     }
 }

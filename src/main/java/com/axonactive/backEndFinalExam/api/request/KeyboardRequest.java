@@ -29,12 +29,5 @@ public class KeyboardRequest {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    private String manufacturerName;
-
-    private String kitBatchName;
-
-    private String switchBatchName;
-
-    private String keyCapName;
 
 }

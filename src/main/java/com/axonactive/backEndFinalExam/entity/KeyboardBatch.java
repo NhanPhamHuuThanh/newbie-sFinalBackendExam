@@ -40,9 +40,9 @@ public class KeyboardBatch {
     @ManyToOne
     private Manufacturer manufacturer;
 
-    private String kitBatchName;
+    private String kitName;
 
-    private String switchBatchName;
+    private String switchName;
 
     private String keyCapName;
 }

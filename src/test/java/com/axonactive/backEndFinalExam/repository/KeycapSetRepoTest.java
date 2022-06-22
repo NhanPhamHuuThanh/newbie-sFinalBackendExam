@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class KeycapSetRepoTest {
     @Autowired
-    private KeycapSetRepo keycapSetRepo;
+    private KeyCapSetRepository keycapSetRepo;
 
     @Test
     void shouldReturn0WhenFirstCreated() {

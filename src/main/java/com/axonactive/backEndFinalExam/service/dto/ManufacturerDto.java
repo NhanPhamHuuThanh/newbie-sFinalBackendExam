@@ -15,9 +15,4 @@ public class ManufacturerDto {
 
     private String email;
 
-    private Integer keyCapSetId;
-
-    private Integer kitBatchId;
-
-    private Integer switchBatchId;
 }

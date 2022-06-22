@@ -12,7 +12,6 @@ import java.util.List;
 public interface ManufacturerMapper {
     ManufacturerMapper INSTANCE = Mappers.getMapper(ManufacturerMapper.class);
 
-
     ManufacturerDto toDto(Manufacturer manufacturer);
 
     List<ManufacturerDto> toDtos(List<Manufacturer> manufacturerList);

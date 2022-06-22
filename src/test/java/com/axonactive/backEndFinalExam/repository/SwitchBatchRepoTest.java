@@ -16,4 +16,8 @@ class SwitchBatchRepoTest {
     void shouldReturn0WhenFirstTested(){
     Assertions.assertEquals(0,switchBatchRepo.getAllInstock("001").size());
 }
+@Test
+    void shouldReturn0WhereThereArentAnyManufacturer(){
+    Assertions.assertEquals(0,switchBatchRepo.getAllSwitchBatchFromAManufacturer("Tescee").size());
+}
 }
